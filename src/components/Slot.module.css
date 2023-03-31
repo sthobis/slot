@@ -1,0 +1,67 @@
+.slot {
+  position: relative;
+  background-color: #fff;
+  flex: 1 1 20%;
+  width: auto;
+  min-width: 0;
+  max-width: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid #fe9513;
+  border-radius: 10px;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #fe9513,
+    0 0 0.8rem #fe9513, 0 0 2.8rem #fe9513, inset 0 0 1.3rem #fe9513;
+}
+
+.slot::before {
+  content: "";
+  display: block;
+  padding-bottom: 133%;
+}
+
+.roll {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roll .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card::before {
+  content: "";
+  display: block;
+  padding-bottom: 133%;
+}
+
+.card span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: min(10vw, 100px);
+}
+
+.spin,
+.spin-1,
+.spin-2 {
+  animation: spin forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}

@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  position: relative;
+  background: transparent;
+  padding: 15px 100px 18px 100px;
+  cursor: pointer;
+  border: 2px solid #ff0095;
+  border-radius: 14px;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0095,
+    0 0 0.8rem #ff0095, 0 0 2.8rem #ff0095, inset 0 0 1.3rem #ff0095;
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #ff0095,
+    0 0 82px #ff0095, 0 0 92px #ff0095, 0 0 102px #ff0095, 0 0 151px #ff0095;
+}

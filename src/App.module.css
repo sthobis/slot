@@ -1,0 +1,33 @@
+body {
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a,
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  background: #e9e9e9;
+  padding: 4px 8px 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
