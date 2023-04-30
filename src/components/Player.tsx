@@ -29,9 +29,10 @@ export const SLOT_ITEMS = [
 
 type PlayerProps = {
   mode: SlotsMode;
+  muted: boolean;
 };
 
-function Player({ mode }: PlayerProps) {
+function Player({ mode, muted }: PlayerProps) {
   const [spinning, setSpinning] = useState(false);
   const [spinCount, setSpinCount] = useState(0);
   const [rigged, setRigged] = useState([9, 9, 9, 9, 9]);
@@ -72,18 +73,18 @@ function Player({ mode }: PlayerProps) {
       setRigged([1, 2, 3, 4, 5]);
     }
     setTimeout(() => {
-      spinAudioRef.current?.play();
+      !muted && spinAudioRef.current?.play();
     }, 200);
     setSpinning(true);
     setSpinCount(spinCount + 1);
     setTimeout(() => {
-      if (mode === "JACKPOT" && winAudioRef.current) {
-        winAudioRef.current.currentTime = 0;
-        winAudioRef.current.play();
-      }
       if (spinAudioRef.current) {
         spinAudioRef.current.pause();
         spinAudioRef.current.currentTime = 0;
+      }
+      if (mode === "JACKPOT" && winAudioRef.current) {
+        winAudioRef.current.currentTime = 0;
+        !muted && winAudioRef.current.play();
       }
     }, SPIN_DURATION_IN_MS - 100);
     setTimeout(() => {

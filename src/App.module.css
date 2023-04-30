@@ -31,3 +31,39 @@ button {
   flex: 1;
   height: 100%;
 }
+
+.muteButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.muteButton img {
+  width: 30px;
+  height: 30px;
+}
+
+.muteButton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 36px;
+  top: 50%;
+  left: 50%;
+  background-color: #111;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transform: translate(-50%, -52%) rotate(-43deg);
+  transform-origin: center;
+  opacity: 0;
+}
+
+.muteButton.muted::before {
+  opacity: 1;
+}
